@@ -5,6 +5,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Profile from './components/Profile';
 import SignUp from './components/Signup';
+import PersonalityTest from './PersonalityTest';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={SignUp} />
           <Route path='/home' component={Home} />
-          {/* <Route path='/products' component={Products} /> */}
+          <Route path='/personalty-test' component={PersonalityTest} />
           <Route path='/profile' component={Profile} />
         </Switch>
       </Router>
