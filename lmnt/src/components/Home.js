@@ -14,10 +14,10 @@ function Home() {
       <Router>
         <Sidebar/>
         <Switch>
-          <Route path="/rooms/:roomId">
+          <Route path="home/rooms/:roomId">
             <Chat/>
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Chat/>
           </Route>              
         </Switch>            
@@ -28,4 +28,6 @@ function Home() {
 }
 
 
+
 export default Home;
+

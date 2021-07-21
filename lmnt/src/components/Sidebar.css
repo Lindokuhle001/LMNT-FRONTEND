@@ -1,5 +1,6 @@
 .sidebar{
     flex: 0.35;
+    overflow: scroll;
 }
 
 .sidebar_search{

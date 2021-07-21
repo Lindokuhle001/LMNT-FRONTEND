@@ -1,3 +1,19 @@
+// import React from 'react';
+
+// import './Chat.css';
+
+// function Chat() {
+  
+//   return (
+//     <>
+//        <h1>hello</h1>
+//     </>
+//   );
+// }
+
+// export default Chat;
+
+
 // import React, {useState,useEffect} from 'react';
 // import {Avatar, IconButton} from '@material-ui/core';
 // import {AttachFile, MoreVert, SearchOutlined} from '@material-ui/icons';
@@ -46,12 +62,12 @@
 //     }
 
 //     return (
-//         <div className='chat'>
-//             <div className='chat_header'>
+//         <div className='Chat'>
+//             <div className='Chat_header'>
 //                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
-//                 <div className='chat_headerInfo'>
-//                     <h3 className='chat-room-name'>{roomName}</h3>
-//                     <p className='chat-room-last-seen'>
+//                 <div className='Chat_headerInfo'>
+//                     <h3 className='Chat-room-name'>{roomName}</h3>
+//                     <p className='Chat-room-last-seen'>
 //                         Last seen {" "}
 //                         {new Date(
 //                             messages[messages.length - 1]?.
@@ -59,7 +75,7 @@
 //                         ).toUTCString()}
 //                     </p>
 //                 </div>
-//                 <div className="chat_headerRight">
+//                 <div className="Chat_headerRight">
 //                     <IconButton>
 //                         <SearchOutlined/>
 //                     </IconButton>
@@ -72,16 +88,16 @@
                     
 //                 </div>
 //             </div>
-//             <div className='chat_body'>
+//             <div className='Chat_body'>
 //                 {messages.map(message => (
-//                     <p className={`chat_message ${ message.name == user.displayName && 'chat_receiver'}`}>
-//                         <span className="chat_name">{message.name}</span>
+//                     <p className={`Chat_message ${ message.name == user.displayName && 'Chat_receiver'}`}>
+//                         <span className="Chat_name">{message.name}</span>
 //                         {message.message}
-//                         <span className="chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
+//                         <span className="Chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
 //                     </p>
 //                 ))}
 //             </div>
-//             <div className='chat_footer'>
+//             <div className='Chat_footer'>
 //                 <InsertEmoticonIcon />
 //                 <form>
 //                     <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
@@ -95,3 +111,5 @@
 // }
 
 // export default Chat
+
+
