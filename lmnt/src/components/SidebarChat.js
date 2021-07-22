@@ -30,7 +30,7 @@ function SidebarChat({id,name,addNewChat}) {
     };
 
     return !addNewChat ? (
-        <Link to={`/rooms/${id}`} key={id}>
+        <Link to={`/home/rooms/${id}`} key={id}>
             <div className="sidebarChat">
                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
                 <div className="sidebarChat_info">

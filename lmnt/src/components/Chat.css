@@ -1,4 +1,4 @@
-.chat{
+.Chat{
     flex: 0.65;    
     display: flex;
     flex-direction: column;
@@ -39,16 +39,16 @@
     min-width: 100px;
 }
 
-.chat_body{
+.Chat_body{
     flex: 1;
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    /* background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     background-repeat: repeat;
     background-position: center;
-    padding: 30px;
+    padding: 30px; */
     overflow:scroll;
 }
 
-.chat_message{
+.Chat_message{
     position: relative;
     font-size: 16px;
     border-radius: 10px;
@@ -57,7 +57,7 @@
     width: fit-content;
 }
 
-.chat_name{
+.Chat_name{
     position: absolute;
     top:-15px;
     font-weight: 800;
@@ -69,12 +69,12 @@
     font-size: xx-small;
 }
 
-.chat_receiver{
+.Chat_receiver{
     margin-left: auto;
     background-color: #dcf8c6;
 }
 
-.chat_footer{
+.Chat_footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,12 +82,12 @@
     border: 1px solid lightgray;
 }
 
-.chat_footer > form{
+.Chat_footer > form{
     flex: 1;
     display: flex;
 }
 
-.chat_footer > form > input{
+.Chat_footer > form > input{
     flex: 1;
     border-radius: 30px;
     padding: 10px;
@@ -95,6 +95,6 @@
     margin: 0 10px 0px 10px;
 }
 
-.chat_footer > form > button{
+.Chat_footer > form > button{
     display: none;
 }
