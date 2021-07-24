@@ -1,16 +1,14 @@
-import React, { useState /*useEffect*/ } from "react";
+import  {React, useState} from "react";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
-import { useParams } from "react-router-dom";
-// import { useStateValue } from "./StateProvider";
-// import { Avatar, IconButton } from "@material-ui/core";
-// import { AttachFile, MoreVert, SearchOutlined } from "@material-ui/icons";
+
 
 function Chat() {
   const [input, setInput] = useState("");
+  const [question, setQuestion] = useState("whats your name?");
   // const [seed, setSeed] = useState("");
-  const { roomId } = useParams();
+  // const { roomId } = useParams();
   // const [roomName, setRoomName] = useState("");
   // const [messages, setMessages] = useState([]);
   // const [{ user }, dispatch] = useStateValue();
@@ -36,6 +34,16 @@ function Chat() {
   // useEffect(() => {
   //   setSeed(Math.floor(Math.random() * 5000));
   // }, [roomId]);
+
+  // useEffect(() => {
+  //   setQuestion((q) => q + "what")
+  // }, [question]);
+
+  function getQuestion(){
+    return setQuestion((q) => q + "what? ")
+  }
+
+  
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -67,27 +75,10 @@ function Chat() {
   return (
     <div className="Chat">
       <div className="Chat_headerRight">
-        {/* <div className="Chat_header">
-          <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
-          <div className="Chat_headerInfo">
-            <h3 className="Chat-room-name">{roomName}</h3>
-            <p className="Chat-room-last-seen">
-              Last seen{" "}
-              {new Date(
-                messages[messages.length - 1]?.timestamp?.toDate()
-              ).toUTCString()}
-            </p>
-            <IconButton>
-              <SearchOutlined />
-            </IconButton>
-            <IconButton>
-              <AttachFile />
-            </IconButton>
-            <IconButton>
-              <MoreVert />
-            </IconButton>
-          </div>
-        </div> */}
+        <div className="Chat_header">
+          <p> {question}</p>
+          <button onClick={getQuestion} className="next_quetion">next</button>
+        </div>
       </div>
       <div className="Chat_body">
         {messages.map((message) => (

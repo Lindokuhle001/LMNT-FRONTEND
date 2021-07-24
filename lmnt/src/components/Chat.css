@@ -12,8 +12,9 @@
     margin: 0;
 }
 
-.chat_header{
+.Chat_header{
     display: flex;
+    flex-direction: column;
     padding: 20px;
     align-items: center;
     border-bottom: 1px solid lightgray;
