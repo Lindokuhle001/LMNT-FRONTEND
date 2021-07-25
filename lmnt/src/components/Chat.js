@@ -60,7 +60,6 @@ function Chat() {
     {
       name: "lindo",
       message: "hey",
-      timestamp: "12:00",
     },
     {
       name: "mpilo",
