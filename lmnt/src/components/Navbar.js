@@ -54,18 +54,27 @@ function Navbar() {
                 personality test
               </Link>
             </li>
-
-            <li>
+            <li className='nav-item'>
               <Link
-                to='/profile'
-                className='nav-links-mobile'
+                to='/Profile'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Profile
               </Link>
             </li>
+
+            {/* <li>
+              <Link
+                to='/profile'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}
+              >
+                myProfile
+              </Link> 
+            </li>*/}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>Profile</Button>}
+          {button && <Button buttonStyle='btn--outline'>Sign-Up</Button>}
         </div>
       </nav>
     </>
