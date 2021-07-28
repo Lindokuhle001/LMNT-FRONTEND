@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Avatar} from "@material-ui/core";
 import './SidebarChat.css';
 import {Link} from 'react-router-dom';
+import db from '../firebase';
 
 function SidebarChat({id,name,addNewChat}) {
     const [seed, setSeed] = useState("");
@@ -19,14 +20,14 @@ function SidebarChat({id,name,addNewChat}) {
         setSeed(Math.floor(Math.random() * 5000));        
     }, []);
     // add new match
-    const addMatch = () => {
-        // const roomName = prompt("Please Enter Name for Chat");
-        // database
-        // if(roomName){
-        //     db.collection("rooms").add({
-        //         name: roomName
-        //     })
-        // }
+    const createChat = () => {
+        const roomName = prompt("Please Enter Name for Chat");
+
+        if(roomName){
+            db.collection("rooms").add({
+                name: roomName
+            })
+        }
     };
 
     return !addNewChat ? (
@@ -41,7 +42,7 @@ function SidebarChat({id,name,addNewChat}) {
         </Link>
         
     ) : (
-        <div onClick={addMatch} className="sidebarChat">
+        <div onClick={createChat} className="sidebarChat">
             <h3 className="add-new-chat-title">Get New Match</h3>
         </div>
     )
