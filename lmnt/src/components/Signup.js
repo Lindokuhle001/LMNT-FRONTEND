@@ -8,7 +8,7 @@ import { actionTypes } from '../Reducer';
 
 
 
-function Signup({user}) {
+function Signup() {
   const [{},dispatch] = useStateValue();
 const signIn = () => {
     auth
