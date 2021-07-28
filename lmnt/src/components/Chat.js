@@ -1,21 +1,21 @@
-import  {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
-import { useParams } from 'react-router-dom';
-import db from '../firebase';
-// import firebase from 'firebase';
-// import {useStateValue} from "./StateProvider";
-
+// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import db from "../firebase";
+import firebase from "firebase";
+import { useStateValue } from "../StateProvider";
 
 function Chat() {
   const [input, setInput] = useState("");
   const [question, setQuestion] = useState("whats your name?");
   // const [seed, setSeed] = useState("");
   const { roomId } = useParams();
-
   const [messages, setMessages] = useState([]);
-  // const [{ user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
+
 
   useEffect(() => {
     if (roomId) {
@@ -25,6 +25,13 @@ function Chat() {
       //     setRoomName(snapshot.data().name);
       //   });
 
+      // db.collection("rooms")
+      //   .doc(roomId)
+      //   .collection("messages")
+      //   .orderBy("timestamp", "asc")
+      //   .onSnapshot((snapshot) => {
+      //     setMessages(snapshot.docs.map((doc) => doc.data()));
+      //   });
       db.collection("rooms")
         .doc(roomId)
         .collection("messages")
@@ -32,6 +39,7 @@ function Chat() {
         .onSnapshot((snapshot) => {
           setMessages(snapshot.docs.map((doc) => doc.data()));
         });
+
     }
   }, [roomId]);
 
@@ -39,20 +47,17 @@ function Chat() {
   //   setSeed(Math.floor(Math.random() * 5000));
   // }, [roomId]);
 
-
-  function getQuestion(){
-    return setQuestion((q) => q + "what? ")
+  function getQuestion() {
+    return setQuestion((q) => q + "what? ");
   }
 
-  
-
   const sendMessage = (e) => {
-    // e.preventDefault();
-    // db.collection("rooms").doc(roomId).collection("messages").add({
-    //   message: input,
-    //   name: user.displayName,
-    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    // });
+    e.preventDefault();
+    db.collection("rooms").doc(roomId).collection("messages").add({
+      message: input,
+      name: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
 
     setInput("");
   };
@@ -77,17 +82,25 @@ function Chat() {
       <div className="Chat_headerRight">
         <div className="Chat_header">
           <p> {question}</p>
-          <button onClick={getQuestion} className="next_quetion">next</button>
+          <button onClick={getQuestion} className="next_quetion">
+            next
+          </button>
         </div>
       </div>
       <div className="Chat_body">
+        {/* <p>hello</p> */}
         {messages.map((message) => (
-          <p className="Chat_message">
+          
+          <p
+            className={`Chat_message ${
+              message.name === user.displayName && "chat_receiver"
+            }`}
+          >{console.log('hello world')}
             <span className="Chat_name">{message.name}</span>
             {message.message}
-            {/* <span className="Chat_timestemp">
-                {new Date(message.timestamp?.toDate()).toUTCString()}
-              </span> */}
+            <span className="Chat_timestemp">
+              {new Date(message.timestamp?.toDate()).toUTCString()}
+            </span>
           </p>
         ))}
       </div>

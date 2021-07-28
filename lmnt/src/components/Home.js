@@ -12,7 +12,7 @@ function Home() {
       <Router>
         <Sidebar />
         <Switch>
-          <Route path="home/rooms/:roomId">
+          <Route path="/home/rooms/:roomId">
             <Chat />
           </Route>
           <Route path="/home">
