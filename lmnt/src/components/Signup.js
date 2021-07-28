@@ -1,15 +1,51 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
+import "../App.css";
+import { Button } from "./Button";
+import "./HeroSection.css";
+import {auth,provider} from '../firebase';
+import { useStateValue } from '../StateProvider';
+import { actionTypes } from '../Reducer';
 
-import HeroSection from './HeroSection';
 
 
-function SignUp() {
+function Signup({user}) {
+  const [{},dispatch] = useStateValue();
+const signIn = () => {
+    auth
+        .signInWithPopup(provider)
+        .then((result) => {
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user,
+            })
+        })
+        .catch((error) => alert(error.message));
+}
+
   return (
-    <>
-      <HeroSection />
-    </>
+    <div className="hero-container">
+      <h1>LET'S PLAY</h1>
+      <p>SIGNUP WITH?</p>
+      <div className="hero-btns">
+        <Button
+          type="submit"
+          onClick={signIn}
+          className="btns"
+          buttonStyle="btn--outline"
+          buttonSize="btn--large"
+        >
+          GOOGLE
+        </Button>
+        <Button
+          className="btns"
+          buttonStyle="btn--primary"
+          buttonSize="btn--large"
+        >
+          FACEBOOK
+        </Button>
+      </div>
+    </div>
   );
 }
 
-export default SignUp;
+export default Signup;
