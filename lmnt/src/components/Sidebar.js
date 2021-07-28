@@ -1,57 +1,59 @@
-import React/*, {useState,useEffect}*/ from 'react';
+import {React, useState,useEffect} from 'react';
 import './Sidebar.css';
 // import {SearchOutlined} from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
+import db from '../firebase';
+// import { useStateValue } from './StateProvider';
 // import { useStateValue } from './StateProvider';
 // import {Avatar} from "@material-ui/core";
 
 function Sidebar(props) {
 
-    const matchList = [
-        {
-            name : 'lindo',
-            id : 'lindo',
-            myMessages : ['hi','how']
-        },
-        {
-            name : 'mpilo',
-            id : 'mpilo',
-            myMessages : ['hi','how']
-        },
-        {
-            name : 'thembeka',
-            id : 'thembeka',
-            myMessages : ['hi','how']
-        },
-        {
-            name : 'thabang',
-            id : 'thabang',
-            myMessages : ['hi','how']
+    // const matchList = [
+    //     {
+    //         name : 'lindo',
+    //         id : 'lindo',
+    //         myMessages : ['hi','how']
+    //     },
+    //     {
+    //         name : 'mpilo',
+    //         id : 'mpilo',
+    //         myMessages : ['hi','how']
+    //     },
+    //     {
+    //         name : 'thembeka',
+    //         id : 'thembeka',
+    //         myMessages : ['hi','how']
+    //     },
+    //     {
+    //         name : 'thabang',
+    //         id : 'thabang',
+    //         myMessages : ['hi','how']
 
-        }
-    ]
+    //     }
+    // ]
 
-    // const [rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState([]);
     // const [{user},dispatch] = useStateValue();
 
 
 
-    // useEffect(() => {
-    //     const unsubscribe = db.collection('rooms').onSnapshot(snapshot => (
-    //         setRooms(snapshot.docs.map(doc => (
-    //             {
-    //                 id: doc.id,
-    //                 data: doc.data()
-    //             }
-    //         )
+    useEffect(() => {
+        const unsubscribe = db.collection('rooms').onSnapshot(snapshot => (
+            setRooms(snapshot.docs.map(doc => (
+                {
+                    id: doc.id,
+                    data: doc.data()
+                }
+            )
 
-    //         ))
-    //     ));
+            ))
+        ));
 
-    //     return () => {
-    //         unsubscribe();
-    //     }
-    // },[]); 
+        return () => {
+            unsubscribe();
+        }
+    },[]); 
 
     return (
         <div className="sidebar">
@@ -67,8 +69,8 @@ function Sidebar(props) {
             </div> */}
             <div className="sidebar_chats">
                 <SidebarChat addNewChat/>
-                {matchList.map(room=> (
-                    <SidebarChat key={room.id} id={room.id} name={room.name}/>
+                {rooms.map(room=> (
+                    <SidebarChat key={room.id} id={room.id} name={room.data.name}/>
                 ))}
             </div>
         </div>
