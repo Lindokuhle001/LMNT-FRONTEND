@@ -38,7 +38,7 @@ function Chat() {
         .orderBy("timestamp", "asc")
         .onSnapshot((snapshot) => {
           setMessages(snapshot.docs.map((doc) => doc.data()));
-        });
+        }); 
 
     }
   }, [roomId]);
@@ -62,20 +62,6 @@ function Chat() {
     setInput("");
   };
 
-  // const messages = [
-  //   {
-  //     name: "lindo",
-  //     message: "hey",
-  //   },
-  //   {
-  //     name: "mpilo",
-  //     message: "hey",
-  //   },
-  //   {
-  //     name: "lindo",
-  //     message: "how are you",
-  //   },
-  // ];
 
   return (
     <div className="Chat">
@@ -93,7 +79,7 @@ function Chat() {
           
           <p
             className={`Chat_message ${
-              message.name === user.displayName && "chat_receiver"
+              message.name === user.displayName && "Chat_receiver"
             }`}
           >{console.log('hello world')}
             <span className="Chat_name">{message.name}</span>

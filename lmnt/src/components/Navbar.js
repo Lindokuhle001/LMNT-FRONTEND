@@ -47,11 +47,11 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/Personality-test'
+                to='/Products'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                personality test
+                get match
               </Link>
             </li>
             <li className='nav-item'>
