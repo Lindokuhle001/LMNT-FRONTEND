@@ -25,7 +25,6 @@ function SidebarChat({id,name,addNewChat}) {
     }, []);
     // add new match
     const createChat = () => {
-        // const roomName = prompt("Please Enter Name for Chat");
         db.collection('users').onSnapshot((snapshot) => {
             setMatch(snapshot.docs.map((doc) => doc.data()).filter((user) => user.PersonalityType).pop().name);
           })
@@ -34,7 +33,7 @@ function SidebarChat({id,name,addNewChat}) {
         if(match){
             db.collection("rooms").add({
                 name: match,
-                users :[match,user]
+                users :[match]
             })
         }
     };

@@ -8,19 +8,19 @@ function Profile() {
       <div class="content">
         <form action="#">
           <div class="user-details"></div>
-          <label for="userGender">your gender</label>
+          <label htmlFor="userGender">your gender</label>
           <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
-          <label for="perferedGender">your prefered ender</label>
+          <label htmlFor="perferedGender">your prefered ender</label>
           <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
-          <label for="gender">age range</label>
+          <label htmlFor="gender">age range</label>
         <select name="gender" id="gender">
           <option value="age">all</option>
           <option value="age">18</option>
@@ -36,7 +36,7 @@ function Profile() {
           <option value="age">29</option>
           <option value="age">30</option>
         </select>
-        <label for="personalityType">Your personalityType</label>
+        <label htmlFor="personalityType">Your personalityType</label>
           <select name="personalityType" id="personalityType">
             <option value="ISTJ">ISTJ</option>
             <option value="ISTP">ISTP</option>

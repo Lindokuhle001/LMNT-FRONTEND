@@ -13,15 +13,6 @@ function Sidebar(props) {
 
   useEffect(() => {
 
-    //   db.collection("rooms").onSnapshot((snapshot) =>
-    //         console.log(snapshot.docs
-
-    //       .map((doc) => ({
-    //         id: doc.id,
-    //         data: doc.data(),
-    //       })).filter((a) => a.data.users === 'mpilo')
-    //   )
-    // );
 
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
       setRooms(
@@ -29,7 +20,8 @@ function Sidebar(props) {
           .map((doc) => ({
             id: doc.id,
             data: doc.data(),
-          })).filter((a) => a.data.users === 'mpilo')
+          }))
+        //   .filter((a) => a.data.users === 'mpilo')
       )
     );
 
