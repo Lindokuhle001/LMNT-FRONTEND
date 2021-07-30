@@ -9,30 +9,6 @@ import db from '../firebase';
 
 function Sidebar(props) {
 
-    // const matchList = [
-    //     {
-    //         name : 'lindo',
-    //         id : 'lindo',
-    //         myMessages : ['hi','how']
-    //     },
-    //     {
-    //         name : 'mpilo',
-    //         id : 'mpilo',
-    //         myMessages : ['hi','how']
-    //     },
-    //     {
-    //         name : 'thembeka',
-    //         id : 'thembeka',
-    //         myMessages : ['hi','how']
-    //     },
-    //     {
-    //         name : 'thabang',
-    //         id : 'thabang',
-    //         myMessages : ['hi','how']
-
-    //     }
-    // ]
-
     const [rooms, setRooms] = useState([]);
     // const [{user},dispatch] = useStateValue();
 
