@@ -3,13 +3,12 @@ import "./Sidebar.css";
 // import {SearchOutlined} from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
 import db from "../firebase";
-// import { useStateValue } from './StateProvider';
-// import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 // import {Avatar} from "@material-ui/core";
 
 function Sidebar(props) {
   const [rooms, setRooms] = useState([]);
-  // const [{user},dispatch] = useStateValue();
+  const [{user},dispatch] = useStateValue();
 
   useEffect(() => {
 
@@ -21,10 +20,13 @@ function Sidebar(props) {
             id: doc.id,
             data: doc.data(),
           }))
-        //   .filter((a) => a.data.users === 'mpilo')
+          .filter((a) => {
+            // console.log(a.data.users.includes(user.displayName))
+            return a.data.users.includes(user.displayName)})
       )
     );
-
+    // console.log(a.data.users)
+// .includes(user.displayName)
     return () => {
       unsubscribe();
     };

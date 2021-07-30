@@ -10,6 +10,7 @@ function SidebarChat({id,name,addNewChat}) {
     const [messages, setMessages] = useState("");
     const [match, setMatch] = useState("");
     const [{ user }, dispatch] = useStateValue();
+    // console.log(user.displayName)
 
     
     useEffect(() => {
@@ -29,11 +30,10 @@ function SidebarChat({id,name,addNewChat}) {
             setMatch(snapshot.docs.map((doc) => doc.data()).filter((user) => user.PersonalityType).pop().name);
           })
           console.log(match)
-
         if(match){
             db.collection("rooms").add({
                 name: match,
-                users :[match]
+                users :[match,user.displayName]
             })
         }
     };
