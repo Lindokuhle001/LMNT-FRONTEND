@@ -6,15 +6,15 @@ function Products() {
       <form action="#">
         <label for="userGender">your gender</label>
         <select name="gender" id="gender">
-          <option value="India">male</option>
-          <option value="Sri Lanka">female</option>
-          <option value="Australia">other</option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
         </select>
         <label for="perferedGender">your prefered ender</label>
-        <select name="perferedGender" id="perferedGender">
-          <option value="India">male</option>
-          <option value="Sri Lanka">female</option>
-          <option value="Australia">other</option>
+        <select name="gender" id="gender">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
         </select>
         <label for="gender">age range</label>
         <select name="gender" id="gender">

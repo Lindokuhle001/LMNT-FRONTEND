@@ -7,44 +7,55 @@ function Profile() {
       <div class="title">Profile</div>
       <div class="content">
         <form action="#">
-          <div class="user-details">
-            <div class="input-box">
-              <span class="details">First Name</span>
-              <input type="text" placeholder="Enter your First Name" required />
-            </div>
-            <div class="input-box">
-              <span class="details">Date Of Birth</span>
-              <input type="number" placeholder="YYYY/MM/DD" required />
-            </div>
-            <div class="input-box">
-              <span class="details">Sexual Orientation</span>
-              <input type="text" placeholder="Gender interested in" required />
-            </div>
-            <div class="input-box">
-              <span class="details">Passion</span>
-              <input type="text" placeholder="Enter your Passion" required />
-            </div>
-          </div>
-          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1" />
-            <input type="radio" name="gender" id="dot-2" />
-            <input type="radio" name="gender" id="dot-3" />
-            <span class="gender-title">Gender</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span class="gender">Prefer not to say</span>
-              </label>
-            </div>
-          </div>
+          <div class="user-details"></div>
+          <label for="userGender">your gender</label>
+          <select name="gender" id="gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </select>
+          <label for="perferedGender">your prefered ender</label>
+          <select name="gender" id="gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </select>
+          <label for="gender">age range</label>
+        <select name="gender" id="gender">
+          <option value="age">all</option>
+          <option value="age">18</option>
+          <option value="age">19</option>
+          <option value="age">21</option>
+          <option value="age">22</option>
+          <option value="age">23</option>
+          <option value="age">24</option>
+          <option value="age">25</option>
+          <option value="age">26</option>
+          <option value="age">27</option>
+          <option value="age">28</option>
+          <option value="age">29</option>
+          <option value="age">30</option>
+        </select>
+        <label for="personalityType">Your personalityType</label>
+          <select name="personalityType" id="personalityType">
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISTP">ISTP</option>
+            <option value="ISFJ">ISFJ</option>
+            <option value="ISFP">ISFP</option>
+            <option value="INFJ">INFJ</option>
+            <option value="INFP">INFP</option>
+            <option value="INTJ">INTJ</option>
+            <option value="INTP">INTP</option>
+            <option value="ESTP">ESTP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESFP">ESFP</option>
+            <option value="ESFJ">ESFJ</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENTP">ENTP</option>
+            <option value="ENTJ">ENTJ</option>
+
+          </select>
           <div class="button">
             <input type="submit" value="Continue" />
           </div>

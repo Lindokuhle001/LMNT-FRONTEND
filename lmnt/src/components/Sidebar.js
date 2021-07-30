@@ -13,15 +13,15 @@ function Sidebar(props) {
 
   useEffect(() => {
 
-      db.collection("rooms").onSnapshot((snapshot) =>
-            console.log(snapshot.docs
+    //   db.collection("rooms").onSnapshot((snapshot) =>
+    //         console.log(snapshot.docs
 
-          .map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          })).filter((a) => a.data.users === 'mpilo')
-      )
-    );
+    //       .map((doc) => ({
+    //         id: doc.id,
+    //         data: doc.data(),
+    //       })).filter((a) => a.data.users === 'mpilo')
+    //   )
+    // );
 
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
       setRooms(
