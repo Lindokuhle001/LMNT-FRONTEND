@@ -2,7 +2,6 @@ import { React, useState, useEffect } from "react";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
-// import { useParams } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";
@@ -16,39 +15,29 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [{ user }, dispatch] = useStateValue();
 
-
   useEffect(() => {
     if (roomId) {
-      // db.collection("rooms")
-      //   .doc(roomId)
-      //   .onSnapshot((snapshot) => {
-      //     setRoomName(snapshot.data().name);
-      //   });
-
-      // db.collection("rooms")
-      //   .doc(roomId)
-      //   .collection("messages")
-      //   .orderBy("timestamp", "asc")
-      //   .onSnapshot((snapshot) => {
-      //     setMessages(snapshot.docs.map((doc) => doc.data()));
-      //   });
       db.collection("rooms")
         .doc(roomId)
         .collection("messages")
         .orderBy("timestamp", "asc")
         .onSnapshot((snapshot) => {
           setMessages(snapshot.docs.map((doc) => doc.data()));
-        }); 
-
+        });
     }
   }, [roomId]);
 
   // useEffect(() => {
   //   setSeed(Math.floor(Math.random() * 5000));
   // }, [roomId]);
-
+// let nextQuestion 
   function getQuestion() {
-    return setQuestion((q) => q + "what? ");
+    let randomNumber = () => { 
+      return Math.floor(Math.random() * 10)
+    };
+ db.collection("questions").onSnapshot((snapshot) => {
+      setQuestion(snapshot.docs.map((doc) => doc.data())[randomNumber()].question);
+    });
   }
 
   const sendMessage = (e) => {
@@ -62,7 +51,6 @@ function Chat() {
     setInput("");
   };
 
-
   return (
     <div className="Chat">
       <div className="Chat_headerRight">
@@ -74,14 +62,13 @@ function Chat() {
         </div>
       </div>
       <div className="Chat_body">
-        {/* <p>hello</p> */}
         {messages.map((message) => (
-          
           <p
             className={`Chat_message ${
               message.name === user.displayName && "Chat_receiver"
             }`}
-          >{console.log('hello world')}
+            key={message.timestamp}
+          >
             <span className="Chat_name">{message.name}</span>
             {message.message}
             <span className="Chat_timestemp">
