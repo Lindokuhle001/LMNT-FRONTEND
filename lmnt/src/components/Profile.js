@@ -1,11 +1,19 @@
 import React from "react";
 import "./profile.css";
 
+
+
+fetch('https://opentdb.com/api.php?amount=50&category=12')
+.then(res => res.json())
+.then(data => console.log(data))
+
 function Profile() {
   return (
     <div class="container">
       <div class="title">Profile</div>
       <div class="content">
+        <h1></h1>
+
         <form action="#">
           <div class="user-details"></div>
           <label htmlFor="userGender">your gender</label>

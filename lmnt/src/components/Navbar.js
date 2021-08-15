@@ -45,15 +45,7 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/Products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                get match
-              </Link>
-            </li>
+
             <li className='nav-item'>
               <Link
                 to='/Profile'
@@ -64,17 +56,18 @@ function Navbar() {
               </Link>
             </li>
 
-            {/* <li>
+            <li className='nav-item'>
               <Link
-                to='/profile'
-                className='nav-links-mobile'
+                to='/Trivia'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
-                myProfile
-              </Link> 
-            </li>*/}
+                Trivia
+              </Link>
+            </li>
+
           </ul>
-          {button && <Button buttonStyle='btn--outline'>Sign-Up</Button>}
+
         </div>
       </nav>
     </>
