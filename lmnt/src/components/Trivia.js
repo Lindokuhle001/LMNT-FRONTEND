@@ -58,6 +58,7 @@ export default function Trivia() {
 		}
 	};
 	return (
+		<div className='Trivia'>
 		<div className='app'>
 			{showScore ? (
 				<div className='score-section'>
@@ -76,8 +77,12 @@ export default function Trivia() {
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
+
+					{/* <iframe  src='https://play.famobi.com/solitaire-classic/A-WILLINGGAMES'  ></iframe> */}
+
 				</>
 			)}
+		</div>
 		</div>
 	);
 }

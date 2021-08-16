@@ -6,8 +6,8 @@
 }
 .app_body{
     display: flex;
-    background-color: #ededed;
-    height: 80vh;
+    background-color: linear-gradient(0deg, black,#80C578);
+    height: 85vh;
     width: 100vw;
     margin-top: 0px;
     box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);

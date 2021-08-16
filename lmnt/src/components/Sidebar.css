@@ -1,33 +1,18 @@
 .sidebar{
     flex: 0.35;
     overflow: scroll;
+    background: linear-gradient(0deg, black,#80C578);
+    border: 15px solid rgb(0, 0, 0);
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+.sidebar::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 
-.sidebar_search{
-    display: flex;
-    align-items: center;
-    background-color: #f6f6f6;
-    height: 39px;
-    padding: 10px;
-}
-
-.sidebar_searchContainer > .MuiSvgIcon-root{
-    color: gray;
-    padding: 10px;
-}
-
-.sidebar_searchContainer > input{
-    border:none;
-    margin-left: 10px;
-}
-.sidebar_searchContainer{
-    display: flex;
-    align-items: center;
-    background-color: white;
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
-}
 
 .sidebar_header{
     display: flex;

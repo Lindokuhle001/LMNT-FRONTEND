@@ -55,10 +55,16 @@ function Chat() {
     <div className="Chat">
       <div className="Chat_headerRight">
         <div className="Chat_header">
-          <p> {question}</p>
+          {/* <p> {question}</p>*/}
           <button onClick={getQuestion} className="next_quetion">
-            next
-          </button>
+            Ice breakers
+          </button> 
+          <button onClick={getQuestion} className="next_quetion">
+            two truths and a lie
+          </button> 
+          <button onClick={getQuestion} className="next_quetion">
+            play trivia
+          </button> 
         </div>
       </div>
       <div className="Chat_body">

@@ -1,7 +1,7 @@
 
 .hero-container {
-  /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
-  background-color: rgb(126, 126, 126);
+  background: url('../images/welcome_background.jpg') bottom center/cover no-repeat;
+  background-color: linear-gradient(0deg, black,#80C578);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -12,6 +12,9 @@
   object-fit: contain;
 }
 
+.hero{
+  background: url('../images/welcome_background.jpg') bottom center /cover;
+}
 .hero-container > h1 {
   color: #111;
   font-size: 100px;

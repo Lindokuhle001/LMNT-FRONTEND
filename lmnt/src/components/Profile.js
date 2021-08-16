@@ -12,7 +12,6 @@ function Profile() {
     <div class="container">
       <div class="title">Profile</div>
       <div class="content">
-        <h1></h1>
 
         <form action="#">
           <div class="user-details"></div>
@@ -22,7 +21,7 @@ function Profile() {
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
-          <label htmlFor="perferedGender">your prefered ender</label>
+          <label htmlFor="perferedGender">your prefered gender</label>
           <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
