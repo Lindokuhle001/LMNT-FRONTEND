@@ -12,14 +12,14 @@ function Home() {
     <div className="app_body">
       <Router>
         <Sidebar />
-        <HeroSection />
+        {/* <HeroSection /> */}
         <Switch>
           <Route path="/home/rooms/:roomId">
             <Chat />
           </Route>
-          {/* <Route path="/">
+          <Route path="/">
             <HeroSection />
-          </Route> */}
+          </Route>
         </Switch>
       </Router>
     </div>
