@@ -1,14 +1,15 @@
-.body{
-    display: grid;
-    place-items: center;    
-    background-color: #dadbd3;
-    height: 100vh;
+.body {
+  display: grid;
+  place-items: center;
+  background-color: #dadbd3;
+  height: 100vh;
 }
-.app_body{
-    display: flex;
-    background-color: linear-gradient(0deg, black,#80C578);
-    height: 85vh;
-    width: 100vw;
-    margin-top: 0px;
-    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
+.app_body {
+  display: flex;
+  background-color: linear-gradient(0deg, black, #80c578);
+  background: url("../images/light_background.png") bottom center / cover;
+  height: 85vh;
+  width: 100vw;
+  margin-top: 0px;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
 }

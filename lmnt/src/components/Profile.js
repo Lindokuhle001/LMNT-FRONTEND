@@ -9,25 +9,25 @@ fetch('https://opentdb.com/api.php?amount=50&category=12')
 
 function Profile() {
   return (
-    <div class="container">
-      <div class="title">Profile</div>
-      <div class="content">
+    <div className="container">
+      <div className="title">Profile</div>
+      <div className="content">
 
         <form action="#">
           <div class="user-details"></div>
-          <label htmlFor="userGender">your gender</label>
+          <label htmlFor="userGender">I'm a</label>
           <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
-          <label htmlFor="perferedGender">your prefered gender</label>
+          <label htmlFor="perferedGender">I'm looking for a</label>
           <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
-          <label htmlFor="gender">age range</label>
+          <label htmlFor="gender">I'm x years old</label>
         <select name="gender" id="gender">
           <option value="age">all</option>
           <option value="age">18</option>
@@ -43,7 +43,7 @@ function Profile() {
           <option value="age">29</option>
           <option value="age">30</option>
         </select>
-        <label htmlFor="personalityType">Your personalityType</label>
+        <label htmlFor="personalityType">My personalityType</label>
           <select name="personalityType" id="personalityType">
             <option value="ISTJ">ISTJ</option>
             <option value="ISTP">ISTP</option>

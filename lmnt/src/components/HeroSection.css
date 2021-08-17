@@ -13,8 +13,8 @@
 }
 
 .hero{
-  background: url('../images/welcome_background.jpg') bottom center /cover;
-  height: 85vh;
+  background: url('../images/LMNT\ Splash.png') bottom center /cover;
+  /* height: 85vh; */
   flex: 0.65; 
 }
 .hero-container > h1 {

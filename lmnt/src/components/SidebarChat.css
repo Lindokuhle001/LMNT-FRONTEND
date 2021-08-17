@@ -3,14 +3,28 @@
     padding: 20px;
     cursor: pointer;
     border-bottom: none;
-
-
+    color: #111;
+    opacity:1;
 }
 
 .sidebarChat:hover{
     background-color: #80C578;
 
 }
+
+.add-new-chat-title {
+    /* width: 10%; */
+    font-size: 16px;
+    color: #111;
+    background-color: #80C578;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid #111;
+    cursor: pointer;
+  }
 
 .sidebarChat_info > h2{
     font-size: 16px;

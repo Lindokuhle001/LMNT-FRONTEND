@@ -6,10 +6,14 @@ import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";
 import { useStateValue } from "../StateProvider";
+import { Link } from "react-router-dom";
+import Popup from "reactjs-popup";
 
 function Chat() {
   const [input, setInput] = useState("");
-  const [question, setQuestion] = useState("whats your name?");
+  const [question, setQuestion] = useState(
+    "If you could live anywhere, where would it be?"
+  );
   // const [seed, setSeed] = useState("");
   const { roomId } = useParams();
   const [messages, setMessages] = useState([]);
@@ -30,13 +34,15 @@ function Chat() {
   // useEffect(() => {
   //   setSeed(Math.floor(Math.random() * 5000));
   // }, [roomId]);
-// let nextQuestion 
+  // let nextQuestion
   function getQuestion() {
-    let randomNumber = () => { 
-      return Math.floor(Math.random() * 10)
+    let randomNumber = () => {
+      return Math.floor(Math.random() * 10);
     };
- db.collection("questions").onSnapshot((snapshot) => {
-      setQuestion(snapshot.docs.map((doc) => doc.data())[randomNumber()].question);
+    db.collection("questions").onSnapshot((snapshot) => {
+      setQuestion(
+        snapshot.docs.map((doc) => doc.data())[randomNumber()].question
+      );
     });
   }
 
@@ -56,15 +62,52 @@ function Chat() {
       <div className="Chat_headerRight">
         <div className="Chat_header">
           {/* <p> {question}</p>*/}
-          <button onClick={getQuestion} className="next_quetion">
-            Ice breakers
-          </button> 
-          <button onClick={getQuestion} className="next_quetion">
-            two truths and a lie
-          </button> 
-          <button onClick={getQuestion} className="next_quetion">
+          <Popup
+            trigger={<button className="next_quetion">Ice breakers</button>}
+            position="right center"
+          >
+            <div className="card">
+              <p>{question}</p>
+              <button onClick={getQuestion} >
+                Skip
+              </button>
+              <button onClick={getQuestion} >
+                Ask
+              </button>
+            </div>
+          </Popup>
+          <Popup
+            trigger={<button className="next_quetion">Two truths and a lie</button>}
+            position="right center"
+          >
+            <div className="card">
+              <p>Play two truths and a lie. Click play then share your too truths and a lie</p>
+              <button onClick={getQuestion} >
+                play
+              </button>
+
+            </div>
+          </Popup>
+          <Link to="/Trivia" className="navbar-logo" >
+            <button  className="next_quetion">
             play trivia
-          </button> 
+          </button>
+          </Link>
+          <Popup
+            trigger={<button className="next_quetion">Your Match's personality Type</button>}
+            position="right center"
+          >
+            <div className="card">
+              <p>Find out more about your match's personality and why you were matched with them So that you can build a stronger connection with them</p>
+              <button onClick={getQuestion} >
+                learn more
+              </button>
+
+            </div>
+          </Popup>
+          <button  className="next_quetion">
+            unmatch
+          </button>
         </div>
       </div>
       <div className="Chat_body">

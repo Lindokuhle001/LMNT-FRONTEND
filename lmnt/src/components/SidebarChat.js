@@ -51,7 +51,7 @@ function SidebarChat({id,name,addNewChat}) {
         
     ) : (
         <div onClick={createChat} className="sidebarChat">
-            <h3 className="add-new-chat-title">Get New Match</h3>
+            <button  className="add-new-chat-title">Get New Match</button>
         </div>
     )
 }
