@@ -51,7 +51,7 @@ function SidebarChat({ id, name, addNewChat }) {
       <div className="sidebarChat">
         <Avatar src={match?.photoURL} />
         <div className="sidebarChat_info">
-          <h2>{name}</h2>
+          <h3>{name}</h3>
           <p>{messages[0]?.message}</p>
         </div>
       </div>

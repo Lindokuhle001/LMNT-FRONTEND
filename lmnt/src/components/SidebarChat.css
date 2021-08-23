@@ -16,13 +16,11 @@
     /* width: 10%; */
     font-size: 16px;
     color: #111;
-    background-color: #80C578;
-    border-radius: 15px;
+    background-color: #fff;
     display: flex;
     padding: 5px;
     justify-content: flex-start;
     align-items: center;
-    border: 5px solid #111;
     cursor: pointer;
   }
 

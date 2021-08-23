@@ -13,3 +13,8 @@
   margin-top: 0px;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 459px) {
+  .app_body {
+    flex-direction: column;
+  }
+}
