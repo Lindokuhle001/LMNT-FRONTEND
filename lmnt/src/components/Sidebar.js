@@ -1,13 +1,13 @@
 import { React, useState, useEffect } from "react";
 import "./Sidebar.css";
-// import {SearchOutlined} from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
 import db from "../firebase";
 import { useStateValue } from '../StateProvider';
-// import {Avatar} from "@material-ui/core";
+import {Avatar} from "@material-ui/core";
 
 function Sidebar(props) {
   const [rooms, setRooms] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [{user},dispatch] = useStateValue();
 
   useEffect(() => {
@@ -30,14 +30,16 @@ function Sidebar(props) {
     return () => {
       unsubscribe();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="sidebar">
-      {/* <div className="sidebar_header">
-                <Avatar src={user?.photoURL}/>
+      <div className="sidebar_header">
+      <h1>{user.displayName}</h1>
 
-            </div> */}
+                <Avatar src={user?.photoURL}/>
+            </div>
       {/* <div className="sidebar_search">
                 <div className="sidebar_searchContainer">
                     <SearchOutlined />
