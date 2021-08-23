@@ -29,7 +29,7 @@ function SidebarChat({id,name,addNewChat}) {
         db.collection('users').onSnapshot((snapshot) => {
             setMatch(snapshot.docs.map((doc) => doc.data()).filter((user) => user.PersonalityType).pop().name);
           })
-          console.log(match)
+        //   console.log(match)
         if(match){
             db.collection("rooms").add({
                 name: match,

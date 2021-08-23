@@ -13,8 +13,9 @@
 }
 
 .hero{
-  background: url('../images/LMNT\ Splash.png') bottom center /cover;
-  /* height: 85vh; */
+  background-color: #056370;
+  margin: 30px;
+  border-radius: 50px;
   flex: 0.65; 
 }
 .hero-container > h1 {

@@ -1,35 +1,35 @@
-.sidebar{
-    flex: 0.35;
-    overflow: scroll;
-    opacity: 1;
-    /* background: linear-gradient(0deg, black,#80C578); */
-    /* border: 15px solid rgb(0, 0, 0); */
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-
+.sidebar {
+  flex: 0.35;
+  overflow: scroll;
+  opacity: 1;
+  background-color: #056370;
+  margin: 0px 10px 5px 30px;
+  border-radius: 25px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
-.sidebar::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
-}
-
-
-.sidebar_header{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border-right: 1px solid lightgray;
+.sidebar::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
-.sidebar_headerRight{
-    display: flex;
-    align-items: center;    
-    justify-content: space-between;
-    min-width: 10vw;
+.sidebar_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-right: 1px solid lightgray;
+}
+
+.sidebar_headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10vw;
 }
 
 .sidebar_headerRight > .MuiSvgIcon-root {
-    margin-right: 2vw;
-    font-size: 20px !important;
+  margin-right: 2vw;
+  font-size: 20px !important;
 }

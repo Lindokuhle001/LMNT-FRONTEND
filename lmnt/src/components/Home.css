@@ -6,8 +6,8 @@
 }
 .app_body {
   display: flex;
-  background-color: linear-gradient(0deg, black, #80c578);
-  background: url("../images/light_background.png") bottom center / cover;
+  background-color: #fff;
+  /* background: url("../images/light_background.png") bottom center / cover; #056370*/
   height: 85vh;
   width: 100vw;
   margin-top: 0px;

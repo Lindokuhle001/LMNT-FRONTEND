@@ -1,6 +1,5 @@
 .navbar {
-    background-color: rgb(0, 0, 0);
-    border-bottom: 1px solid ;
+    background-color: #fff;
     height: 15vh;
     display: flex;
     justify-content: center;
