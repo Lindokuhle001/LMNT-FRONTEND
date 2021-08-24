@@ -119,10 +119,9 @@ function Chat() {
             }`}
             key={message.timestamp}
           >
-            <span className="Chat_name">{message.name}</span>
             {message.message}
             <span className="Chat_timestemp">
-              {new Date(message.timestamp?.toDate()).toUTCString()}
+              {new Date(message.timestamp?.toDate()).toUTCString().slice(18,22)}
             </span>
           </p>
         ))}

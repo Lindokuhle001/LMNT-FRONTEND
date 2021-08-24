@@ -33,10 +33,9 @@
 .Chat_header {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  /* padding: 20px; */
   margin: 20px;
-  
-  align-items: center;
+  /* align-items: center; */
   border-bottom: 1px solid lightgray;
   justify-content: space-around;
   overflow-x: scroll;
