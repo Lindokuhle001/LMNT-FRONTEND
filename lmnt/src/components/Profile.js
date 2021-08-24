@@ -23,6 +23,11 @@ function Profile() {
     console.log(user);
   }
 
+  function setButtons(gender){
+    let xty = gender
+    console.log(xty);
+  }
+
   return (
     <div className="container">
       <div className="title">Profile</div>
@@ -31,7 +36,7 @@ function Profile() {
           <div class="user-details"></div>
           <label htmlFor="userGender">I'm a</label>
           <select name="gender" id="gender">
-            <option value="male">male</option>
+            <option value="male" onClick={setButtons('male')}>male</option>
             <option value="female">female</option>
             <option value="other">other</option>
           </select>
@@ -76,7 +81,7 @@ function Profile() {
             <option value="ENTP">ENTP</option>
             <option value="ENTJ">ENTJ</option>
           </select>
-          <div class="button">
+          <div className="button">
             <input type="submit" value="Continue" />
           </div>
           <Link to={`/home`}>
