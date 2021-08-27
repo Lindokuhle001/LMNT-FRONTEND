@@ -23,7 +23,7 @@
     align-items: center;
     cursor: pointer; */
     font-size: 16px;
-    color: #111;
+    color: #fff;
     background-color: #056370;
     border-radius: 15px;
     display: flex;
@@ -31,9 +31,19 @@
     margin-right: 15px;
     justify-content: flex-start;
     align-items: center;
-    border: 5px solid #111;
+    border: 2px solid #fff;
     cursor: pointer;
   }
+
+.unMatch_button_off{
+    display: none;
+}
+
+.unMatch_button_on{
+    padding: 5px;
+    margin-left: 5px;
+    color: red;
+}
 
 .sidebarChat_info > h2{
     font-size: 16px;
