@@ -6,6 +6,7 @@
   margin: 0px 10px 5px 30px;
   border-radius: 25px;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
@@ -34,8 +35,16 @@
   font-size: 20px !important;
 }
 
+@media (max-width: 900px) {
+    .sidebar {
+    margin: 10px 10px 5px 10px;
+    overflow-x: hidden;
+    flex: auto;
+    }
+  }
+
 @media (max-width: 459px) {
     .sidebar {
-    margin: 0px 10px 5px 10px;
+    margin: 10px 10px 5px 10px;
     }
   }

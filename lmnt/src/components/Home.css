@@ -8,7 +8,7 @@
   display: flex;
   background-color: #fff;
   height: 85vh;
-  width: 100vw;
+  width: 100%;
   margin-top: 0px;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
 }
@@ -17,8 +17,9 @@
     flex-direction: column;
   }
 }
-@media (max-width: 659px) {
+@media (max-width: 900px) {
   .app_body {
     flex-direction: column;
+    overflow-x: auto;
   }
 }
