@@ -20,6 +20,5 @@
 @media (max-width: 900px) {
   .app_body {
     flex-direction: column;
-    overflow-x: auto;
   }
 }

@@ -38,7 +38,7 @@ const signIn = () => {
         </Button>
         <Button
           className="btns"
-          buttonStyle="btn--primary"
+          buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
           FACEBOOK

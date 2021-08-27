@@ -89,11 +89,11 @@ function Chat() {
 
             </div>
           </Popup>
-          <Link to="/Trivia" className="navbar-logo" >
+          {/* <Link to="/Trivia" className="navbar-logo" >
             <button  className="next_quetion">
             play trivia
           </button>
-          </Link>
+          </Link> */}
           <Popup
             trigger={<button className="next_quetion">Your Match's personality Type</button>}
             position="right center"

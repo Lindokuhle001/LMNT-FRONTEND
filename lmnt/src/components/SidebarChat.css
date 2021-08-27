@@ -8,19 +8,30 @@
 }
 
 .sidebarChat:hover{
-    background-color: #80C578;
+    background-color: #fff;
 
 }
 
 .add-new-chat-title {
     /* width: 10%; */
-    font-size: 16px;
+    /* font-size: 16px;
     color: #111;
     background-color: #fff;
     display: flex;
     padding: 5px;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer; */
+    font-size: 16px;
+    color: #111;
+    background-color: #056370;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    margin-right: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid #111;
     cursor: pointer;
   }
 
