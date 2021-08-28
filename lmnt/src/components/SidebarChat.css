@@ -8,8 +8,8 @@
 }
 
 .sidebarChat:hover{
-    background-color: #fff;
-
+    /* background-color: #fff; */
+    background-color: #FFE5F3;
 }
 
 .add-new-chat-title {

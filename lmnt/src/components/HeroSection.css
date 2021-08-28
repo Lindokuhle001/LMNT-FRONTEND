@@ -1,16 +1,33 @@
 
 .hero-container {
-  background: url('../images/welcome_background.jpg') bottom center/cover no-repeat;
-  background-color: linear-gradient(0deg, black,#80C578);
+  /* background: url('../images/loginBackground.png') bottom center/cover no-repeat; */
+  background-color: #FFE5F3;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2); */
   object-fit: contain;
 }
+.welcome-text{
+  max-width: 480px;
+  text-align: center;
+  color: #022C33;
+  margin: 100px 0px 30px 0px;
+  
+}
+
+.welcome-text-paragraph{
+  font-size: 28px;
+}
+
+.lets-play-text{
+  font-size: 500px;
+  color: #022C33;
+}
+
 
 .hero{
   background-color: #056370;
@@ -26,8 +43,8 @@
 
 .hero-container > p {
   margin-top: 8px;
-  color: #111;
-  font-size: 32px;
+  color: #022C33;
+  font-size: 68px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }

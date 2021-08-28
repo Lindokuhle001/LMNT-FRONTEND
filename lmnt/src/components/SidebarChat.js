@@ -64,7 +64,7 @@ function SidebarChat({ id, name, addNewChat }) {
         // console.log(toggle);
         return true;
       }
-      return toggle === false;
+      return false;
     });
     console.log(id);
     // db.collection("rooms").doc(id).update({

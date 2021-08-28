@@ -2,30 +2,35 @@ import React from "react";
 import "../App.css";
 import { Button } from "./Button";
 import "./HeroSection.css";
-import {auth,provider} from '../firebase';
-import { useStateValue } from '../StateProvider';
-import { actionTypes } from '../Reducer';
-
-
+import { auth, provider } from "../firebase";
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../Reducer";
+import coupleImage from "../images/welcomeCouple.png";
 
 function Signup() {
-  const [{},dispatch] = useStateValue();
-const signIn = () => {
+  const [{}, dispatch] = useStateValue();
+  const signIn = () => {
     auth
-        .signInWithPopup(provider)
-        .then((result) => {
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user,
-            })
-        })
-        .catch((error) => alert(error.message));
-}
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <div className="hero-container">
-      <h1>LET'S PLAY</h1>
-      <p>SIGNUP WITH?</p>
+      <div className="welcome-text">
+        <p className="welcome-text-paragraph">
+          My Element helps you make real connections while having fun. Login and
+          have the perfect experience.
+        </p>
+      </div>
+
+      <p className="lets-play-text">LET'S PLAY</p>
       <div className="hero-btns">
         <Button
           type="submit"
@@ -44,6 +49,7 @@ const signIn = () => {
           FACEBOOK
         </Button>
       </div>
+      <img alt="" src={coupleImage} height={416} width={290} />
     </div>
   );
 }
