@@ -2,13 +2,14 @@ import { React, useState, useEffect } from "react";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
-import '../index.css'
+import "../index.css";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 function Chat() {
   const [input, setInput] = useState("");
@@ -70,24 +71,22 @@ function Chat() {
           >
             <div className="card">
               <p>{question}</p>
-              <button onClick={getQuestion} >
-                Skip
-              </button>
-              <button onClick={getQuestion} >
-                Ask
-              </button>
+              <button onClick={getQuestion}>Skip</button>
+              <button onClick={getQuestion}>Ask</button>
             </div>
           </Popup>
           <Popup
-            trigger={<button className="next_quetion">Two truths and a lie</button>}
+            trigger={
+              <button className="next_quetion">Two truths and a lie</button>
+            }
             position="right center"
           >
             <div className="card">
-              <p>Play two truths and a lie. Click play then share your too truths and a lie</p>
-              <button onClick={getQuestion} >
-                play
-              </button>
-
+              <p>
+                Play two truths and a lie. Click play then share your too truths
+                and a lie
+              </p>
+              <button onClick={getQuestion}>play</button>
             </div>
           </Popup>
           {/* <Link to="/Trivia" className="navbar-logo" >
@@ -96,20 +95,26 @@ function Chat() {
           </button>
           </Link> */}
           <Popup
-            trigger={<button className="next_quetion">Your Match's personality Type</button>}
+            trigger={
+              <button className="next_quetion">
+                Your Match's personality Type
+              </button>
+            }
             position="right center"
           >
             <div className="card">
-              <p>Find out more about your match's personality and why you were matched with them So that you can build a stronger connection with them</p>
-              <button onClick={getQuestion} >
-                learn more
-              </button>
-
+              <p>
+                Find out more about your match's personality and why you were
+                matched with them So that you can build a stronger connection
+                with them
+              </p>
+              <button onClick={getQuestion}>learn more</button>
             </div>
           </Popup>
-          <button  className="next_quetion">
-            unmatch
-          </button>
+          <Popup trigger={<button className="next_quetion">unmatch</button>} position="center center">
+            <div>Popup content here !!</div>
+          </Popup>
+          
         </div>
       </div>
       <div className="Chat_body">
@@ -122,7 +127,9 @@ function Chat() {
           >
             {message.message}
             <span className="Chat_timestemp">
-              {new Date(message.timestamp?.toDate()).toUTCString().slice(18,22)}
+              {new Date(message.timestamp?.toDate())
+                .toUTCString()
+                .slice(18, 22)}
             </span>
           </p>
         ))}
