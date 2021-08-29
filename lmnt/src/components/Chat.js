@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import MicIcon from "@material-ui/icons/Mic";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
+import '../index.css'
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";

@@ -6,6 +6,8 @@
   /* width: 100px; */
   margin: 0px 30px 5px 10px;
   border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .card{
@@ -39,19 +41,22 @@
   overflow-x: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+
 }
 
 .next_quetion{
   /* font-size: 16px; */
-  color: #111;
+  color: #056370;
   background-color: #fff;
   border: hidden;
   display: flex;
-  margin: 0px 15px;
+  margin: 0px 15px 10px 15px;
   padding: 5px;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
 }
 
 .Chat_header::-webkit-scrollbar {

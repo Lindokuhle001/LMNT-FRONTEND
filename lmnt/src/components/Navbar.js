@@ -37,7 +37,7 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
+           {/* <li className="nav-item">
               <Link to="/home" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
@@ -53,7 +53,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className="nav-item">
+             <li className="nav-item">
               <Link
                 to="/Trivia"
                 className="nav-links"
@@ -61,8 +61,13 @@ function Navbar() {
               >
                 Trivia
               </Link>
-            </li>
+            </li> */}
           </ul>
+          <button className="btn--outline-profile">
+            <Link to="/Profile" className="nav-links" onClick={closeMobileMenu}>
+              Profile
+            </Link>
+          </button>
         </div>
       </nav>
     </>

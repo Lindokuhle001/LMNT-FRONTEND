@@ -4,6 +4,7 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import reducer,{initialState} from './Reducer';
 import {StateProvider} from './StateProvider';
+import './index.css'
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
