@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
-import MicIcon from "@material-ui/icons/Mic";
-import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+// import MicIcon from "@material-ui/icons/Mic";
+// import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import "./Chat.css";
 import "../index.css";
 import { useParams } from "react-router-dom";
@@ -135,7 +135,6 @@ function Chat() {
         ))}
       </div>
       <div className="Chat_footer">
-        <InsertEmoticonIcon />
         <form>
           <input
             value={input}
@@ -148,7 +147,6 @@ function Chat() {
             Send a Message
           </button>
         </form>
-        <MicIcon />
       </div>
     </div>
   );

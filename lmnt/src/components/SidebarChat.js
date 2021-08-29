@@ -107,6 +107,26 @@ function SidebarChat({ id, name, addNewChat }) {
     </Link>
   ) : (
     <div className="sidebarChat">
+      {
+        console.log(
+          db.collection("users").onSnapshot((snapshot) => {
+            snapshot.docs
+              .map((doc) => doc.data())
+              .filter((user) => user)
+              .pop();
+            // .includes(user.email);
+          })
+        )
+
+        // ? console.log('yes') : console.log('no')
+
+        // db.collection("users").onSnapshot((snapshot) => {
+        //     snapshot.docs
+        //       .map((doc) => doc.data())
+        //       .filter((user) => user)
+        //       .pop().name
+        // });
+      }
       <button onClick={createChat} className="add-new-chat-title">
         Get New Match
       </button>

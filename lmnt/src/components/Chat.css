@@ -41,8 +41,6 @@
   overflow-x: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-
-
 }
 
 .next_quetion{
@@ -51,6 +49,7 @@
   background-color: #fff;
   border: hidden;
   display: flex;
+  font-weight: bold;
   margin: 0px 15px 10px 15px;
   padding: 5px;
   justify-content: flex-start;
@@ -130,9 +129,11 @@
   align-items: center;
   justify-content: space-between;
   height: 62px;
-  color: rgb(0, 0, 0);
+  color: #fff;
   border: none;
 }
+
+
 
 .Chat_footer > form {
   flex: 1;
@@ -144,13 +145,16 @@
   flex: 1;
   border-radius: 20px;
   border: 3px solid #fff;
-  width: 90%;
   padding: 10px;
   color: #fff;
   margin: 0 10px 0px 10px;
   background-color: #056370;
 }
 
+::placeholder {
+  color: #fff;
+  font-size: 1em;
+}
 .Chat_footer > form > button {
   display: none;
 }

@@ -30,18 +30,18 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <img alt="" src={image} height={56} width={48} />
+            <img alt="" src={image} height={46} width={41} />
             <h6>Element</h6>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-           {/* <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/home" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
-            </li>
+            </li> */}
 
             <li className="nav-item">
               <Link
@@ -53,7 +53,7 @@ function Navbar() {
               </Link>
             </li>
 
-             <li className="nav-item">
+             {/*<li className="nav-item">
               <Link
                 to="/Trivia"
                 className="nav-links"
@@ -63,11 +63,6 @@ function Navbar() {
               </Link>
             </li> */}
           </ul>
-          <button className="btn--outline-profile">
-            <Link to="/Profile" className="nav-links" onClick={closeMobileMenu}>
-              Profile
-            </Link>
-          </button>
         </div>
       </nav>
     </>
