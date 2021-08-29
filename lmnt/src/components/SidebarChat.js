@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { Button } from "./Button";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 function SidebarChat({ id, name, addNewChat }) {
   //   const [seed, setSeed] = useState("");
@@ -50,27 +52,26 @@ function SidebarChat({ id, name, addNewChat }) {
   };
 
   function unMatch(identity) {
-    //  console.log(id);
-
     db.collection("rooms").doc(identity).update({
       users: [],
     });
   }
 
-  function unMatchToggle(identity) {
-    console.log(identity);
-    setToggle(() => {
-      if (toggle === false) {
-        // console.log(toggle);
-        return true;
-      }
-      return false;
-    });
-    console.log(id);
-    // db.collection("rooms").doc(id).update({
-    //     visible: toggle,
-    //   });
+  function handleSubmit(event) {
+    event.preventDefault();
   }
+
+  // function unMatchToggle() {
+  //   setToggle(() => {
+  //     if (toggle === false) {
+  //       return true;
+  //     }
+  //     return false;
+  //   });
+  //   db.collection("rooms").doc(id).update({
+  //       visible: toggle,
+  //     });
+  // }
   // onClick={unMatch(id)}
 
   return !addNewChat ? (
@@ -81,19 +82,40 @@ function SidebarChat({ id, name, addNewChat }) {
           <h3>{name}</h3>
           <p>{messages[0]?.message}</p>
         </div>
-
-        <button
-          className={
-            toggle === true ? "unMatch_button_on" : "unMatch_button_off"
+        <Popup
+            trigger={
+              <button className="next_quetion">Two truths and a lie</button>
+            }
+            position="center center"
+          >
+            <div className="card">
+              <p>
+                Play two truths and a lie. Click play then share your too truths
+                and a lie
+              </p>
+              {/* <button onClick={getQuestion}>play</button> */}
+            </div>
+          </Popup>
+        {/* <Popup
+          trigger={
+            <button onClick={handleSubmit} className="next_quetion">
+              {" "}
+              x
+            </button>
           }
-          type="submit"
-          onClick={() => {
-            unMatch(id);
-            console.log(id);
-          }}
+          position="right center"
         >
-          X
-        </button>
+          <p>Are you sure you want to unmatch with this person </p>
+          <button
+            className="unMatch_button_on"
+            type="submit"
+            onClick={() => {
+              unMatch(id);
+            }}
+          >
+            unmatch
+          </button>
+        </Popup> */}
       </div>
     </Link>
   ) : (
@@ -101,9 +123,7 @@ function SidebarChat({ id, name, addNewChat }) {
       <button onClick={createChat} className="add-new-chat-title">
         Get New Match
       </button>
-          
-        {console.log('id')}
-      <button
+      {/* <button
         className="add-new-chat-title"
         onClick={() => {
           unMatchToggle(id);
@@ -111,7 +131,7 @@ function SidebarChat({ id, name, addNewChat }) {
         }}
       >
         Remove Match
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -67,7 +67,7 @@ function Chat() {
           {/* <p> {question}</p>*/}
           <Popup
             trigger={<button className="next_quetion">Ice breakers</button>}
-            position="right center"
+            position="center center"
           >
             <div className="card">
               <p>{question}</p>
@@ -79,7 +79,7 @@ function Chat() {
             trigger={
               <button className="next_quetion">Two truths and a lie</button>
             }
-            position="right center"
+            position="center center"
           >
             <div className="card">
               <p>
@@ -100,7 +100,7 @@ function Chat() {
                 Your Match's personality Type
               </button>
             }
-            position="right center"
+            position="center center"
           >
             <div className="card">
               <p>
