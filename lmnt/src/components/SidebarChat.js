@@ -37,7 +37,7 @@ function SidebarChat({ id, name, addNewChat }) {
       setMatch(
         snapshot.docs
           .map((doc) => doc.data())
-          .filter((user) => user.PersonalityType)
+          .filter((user) => user)
           .pop().name
       );
     });
@@ -46,7 +46,7 @@ function SidebarChat({ id, name, addNewChat }) {
       db.collection("rooms").add({
         name: match,
         users: [match, user.displayName],
-        visible: true,
+        // visible: true,
       });
     }
   };
@@ -82,21 +82,8 @@ function SidebarChat({ id, name, addNewChat }) {
           <h3>{name}</h3>
           <p>{messages[0]?.message}</p>
         </div>
+
         <Popup
-            trigger={
-              <button className="next_quetion">Two truths and a lie</button>
-            }
-            position="center center"
-          >
-            <div className="card">
-              <p>
-                Play two truths and a lie. Click play then share your too truths
-                and a lie
-              </p>
-              {/* <button onClick={getQuestion}>play</button> */}
-            </div>
-          </Popup>
-        {/* <Popup
           trigger={
             <button onClick={handleSubmit} className="next_quetion">
               {" "}
@@ -115,7 +102,7 @@ function SidebarChat({ id, name, addNewChat }) {
           >
             unmatch
           </button>
-        </Popup> */}
+        </Popup>
       </div>
     </Link>
   ) : (
