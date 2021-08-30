@@ -30,7 +30,6 @@ function Profile() {
 
   return (
     <div className="container">
-      <div className="title">Profile</div>
       <div className="content">
         <form action="#">
           <div class="user-details"></div>

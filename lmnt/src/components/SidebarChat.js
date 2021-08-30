@@ -4,7 +4,7 @@ import "./SidebarChat.css";
 import { Link } from "react-router-dom";
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
-import { Button } from "./Button";
+// import { Button } from "./Button";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
@@ -28,9 +28,6 @@ function SidebarChat({ id, name, addNewChat }) {
     }
   }, [id]);
 
-  //   useEffect(() => {
-  //     setSeed(Math.floor(Math.random() * 5000));
-  //   }, []);
   // add new match
   const createChat = () => {
     db.collection("users").onSnapshot((snapshot) => {
@@ -57,9 +54,22 @@ function SidebarChat({ id, name, addNewChat }) {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  // }
+
+  function searchUsers() {
+    db.collection("users").onSnapshot((snapshot) => {
+      setToggle(
+        snapshot.docs
+          .map((doc) => doc.data())
+          .map((obj) => obj.email)
+          .includes(user.email)
+      );
+    });
   }
+
+  // .includes(user.email);
 
   // function unMatchToggle() {
   //   setToggle(() => {
@@ -85,8 +95,7 @@ function SidebarChat({ id, name, addNewChat }) {
 
         <Popup
           trigger={
-            <button onClick={handleSubmit} className="next_quetion">
-              {" "}
+            <button  className="next_quetion">
               x
             </button>
           }
@@ -107,29 +116,22 @@ function SidebarChat({ id, name, addNewChat }) {
     </Link>
   ) : (
     <div className="sidebarChat">
-      {
-        console.log(
-          db.collection("users").onSnapshot((snapshot) => {
-            snapshot.docs
-              .map((doc) => doc.data())
-              .filter((user) => user)
-              .pop();
-            // .includes(user.email);
-          })
-        )
+      {searchUsers()}
+      {console.log(toggle)}
+      {toggle === false ? (
+        <Link to="/Profile">
+          <button 
+          onClick={() => window.location.reload()}
+          className="add-new-chat-title">
+            Get New Match
+          </button>
+        </Link>
+      ) : (
+        <button onClick={createChat} className="add-new-chat-title">
+          Get New Match
+        </button>
+      )}
 
-        // ? console.log('yes') : console.log('no')
-
-        // db.collection("users").onSnapshot((snapshot) => {
-        //     snapshot.docs
-        //       .map((doc) => doc.data())
-        //       .filter((user) => user)
-        //       .pop().name
-        // });
-      }
-      <button onClick={createChat} className="add-new-chat-title">
-        Get New Match
-      </button>
       {/* <button
         className="add-new-chat-title"
         onClick={() => {

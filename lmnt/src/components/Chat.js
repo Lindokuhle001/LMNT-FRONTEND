@@ -111,10 +111,17 @@ function Chat() {
               <button onClick={getQuestion}>learn more</button>
             </div>
           </Popup>
-          <Popup trigger={<button className="next_quetion">unmatch</button>} position="center center">
-            <div>Popup content here !!</div>
+          <Popup
+            trigger={<button className="next_quetion">Play Trivia</button>}
+            position="center center"
+          >
+            <div>
+              <p>hi</p>
+              <li>
+                <Link to="/Trivia">trivia</Link>
+              </li>
+            </div>
           </Popup>
-          
         </div>
       </div>
       <div className="Chat_body">
