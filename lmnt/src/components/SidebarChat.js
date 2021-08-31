@@ -15,6 +15,7 @@ function SidebarChat({ id, name, addNewChat }) {
   const [match, setMatch] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [{ user }, dispatch] = useStateValue();
+  const myName = user.displayName;
 
   useEffect(() => {
     if (id) {
@@ -43,7 +44,7 @@ function SidebarChat({ id, name, addNewChat }) {
       db.collection("rooms").add({
         name: match,
         users: [match, user.displayName],
-        // visible: true,
+        TriviaScore: [0,0]
       });
     }
   };
@@ -119,9 +120,9 @@ function SidebarChat({ id, name, addNewChat }) {
       {searchUsers()}
       {console.log(toggle)}
       {toggle === false ? (
-        <Link to="/Profile">
+        <Link to={`/Profile`}>
           <button 
-          onClick={() => window.location.reload()}
+          // onClick={() => window.location.reload()}
           className="add-new-chat-title">
             Get New Match
           </button>

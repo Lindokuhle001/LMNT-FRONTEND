@@ -10,15 +10,16 @@
 }
 
 .Trivia {
-  background: linear-gradient(0deg, black, #80c578);
+  background-color: #FFE5F3;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
+  /* min-height: 85vh; */
 }
 
 .app {
-  background-color: #80c578;
+  background-color: #056370;
   width: 450px;
   min-height: 200px;
   height: min-content;

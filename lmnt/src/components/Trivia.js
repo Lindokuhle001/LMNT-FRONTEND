@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import "./Trivia.css";
 
-export default function Trivia() {
+export default function Trivia({}) {
+  // fetch("https://opentdb.com/api.php?amount=50&category=12")
+  // .then((res) => res.json())
+  // .then((data) => console.log(data.results[0]));
+
+  /* data.map({
+      questionText: data.question
+      correct_answers.map()
+      answerOptions: [
+        { answerText: "New York", isCorrect: false },
+        { answerText: "London", isCorrect: false },
+        { answerText: "Paris", isCorrect: true },
+        { answerText: "Dublin", isCorrect: false },
+      ],
+  })*/
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -67,6 +81,7 @@ export default function Trivia() {
         ) : (
           <>
             <div className="question-section">
+              <p>{score}</p>
               <div className="question-count">
                 <span>Question {currentQuestion + 1}</span>/{questions.length}
               </div>

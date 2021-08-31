@@ -117,9 +117,9 @@ function Chat() {
           >
             <div>
               <p>hi</p>
-              <li>
-                <Link to="/Trivia">trivia</Link>
-              </li>
+              <Link to={`/Trivia`}>
+                <div>trivia</div>
+              </Link>
             </div>
           </Popup>
         </div>
