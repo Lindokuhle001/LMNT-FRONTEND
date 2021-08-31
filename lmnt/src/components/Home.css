@@ -7,7 +7,7 @@
 }
 .app_body {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* background-color: #fff; */
   background-color: #FFE5F3;
   height: 85vh;
