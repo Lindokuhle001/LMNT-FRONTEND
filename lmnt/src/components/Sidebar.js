@@ -51,7 +51,7 @@ function Sidebar(props) {
             key={room.id}
             id={room.id}
             name={room.data.users
-              .filter((myUser) => myUser !== user)
+              .filter((myUser) => myUser !== user.displayName)
               .pop()
               .split(" ")
               .shift()}
