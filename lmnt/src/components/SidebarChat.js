@@ -93,8 +93,16 @@ function SidebarChat({ id, name, addNewChat }) {
           <h3>{name}</h3>
           <p>{messages[0]?.message}</p>
         </div>
-
-        <Popup
+        <button
+            className="add-new-chat-title"
+            type="submit"
+            onClick={() => {
+              unMatch(id);
+            }}
+          >
+            unmatch
+          </button>
+        {/* <Popup
           trigger={
             <button  className="next_quetion">
               x
@@ -112,7 +120,7 @@ function SidebarChat({ id, name, addNewChat }) {
           >
             unmatch
           </button>
-        </Popup>
+        </Popup> */}
       </div>
     </Link>
   ) : (
