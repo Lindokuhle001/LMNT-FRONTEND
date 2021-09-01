@@ -66,7 +66,7 @@ function SidebarChat({ id, name, addNewChat }) {
         <Avatar src={match?.photoURL} />
         <div className="sidebarChat_info">
           <h3>{name}</h3>
-          <p>{messages[0]?.message}</p>
+          {/* <p>{messages[0].slice(0,9)?.message}</p> */}
         </div>
         <button
             className="add-new-chat-title"
@@ -83,7 +83,6 @@ function SidebarChat({ id, name, addNewChat }) {
   ) : (
     <div className="sidebarChat">
       {searchUsers()}
-      {console.log(toggle)}
       {toggle === false ? (
         <Link to={`/Profile`}>
           <button 

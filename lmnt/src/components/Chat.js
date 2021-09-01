@@ -57,6 +57,14 @@ function Chat() {
     setInput("");
   };
 
+  const elementMessage = () => {
+    db.collection("rooms").doc(roomId).collection("messages").add({
+      message: question,
+      name: 'element',
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  }
+
   function addPlayer(player){
     db.collection("players").add({
       score0: 0,
@@ -76,8 +84,8 @@ function Chat() {
           >
             <div className="card">
               <p>{question}</p>
-              <button onClick={getQuestion}>Skip</button>
-              <button onClick={getQuestion}>Ask</button>
+              <button className="add-new-chat-title" onClick={getQuestion}>Skip</button>
+              <button className="add-new-chat-title" onClick={()=>{elementMessage()}}>Ask</button>
             </div>
           </Popup>
           <Popup
@@ -91,10 +99,10 @@ function Chat() {
                 Play two truths and a lie. Click play then share your too truths
                 and a lie
               </p>
-              <button onClick={getQuestion}>play</button>
+              <button className="add-new-chat-title" onClick={()=>{setQuestion(`${user.displayName} would like to play two truths and a lie`); elementMessage()}}>play</button>
             </div>
           </Popup>
-          <Popup
+          {/* <Popup
             trigger={
               <button className="next_quetion">
                 Your Match's personality Type
@@ -110,7 +118,7 @@ function Chat() {
               </p>
               <button onClick={getQuestion}>learn more</button>
             </div>
-          </Popup>
+          </Popup> */}
           <Popup
             trigger={<button className="next_quetion">Play Trivia</button>}
             position="center center"

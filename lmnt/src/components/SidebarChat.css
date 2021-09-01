@@ -1,5 +1,6 @@
 .sidebarChat{
     display: flex;
+    justify-content: space-around;
     padding: 20px;
     cursor: pointer;
     border-bottom: none;
@@ -10,6 +11,8 @@
 .sidebarChat:hover{
     /* background-color: #fff; */
     background-color: #FFE5F3;
+    color: #056370;
+
 }
 
 .add-new-chat-title {
@@ -45,9 +48,14 @@
     color: red;
 }
 
-.sidebarChat_info > h2{
-    font-size: 16px;
+.sidebarChat_info > h3{
     margin: 0px;
+    color: #fff;
+}
+
+.sidebarChat_info > h3:hover{
+    margin: 0px;
+    color: #056370;
 }
 
 .sidebarChat_info > p{

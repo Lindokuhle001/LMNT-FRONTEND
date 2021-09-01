@@ -120,28 +120,28 @@ export default function Trivia() {
       
   }
 
-  useEffect(() => {
-    let index = getScore();
-    if( index === 1){
-    db.collection("players").docs
-      .filter((a) => {
-         return a.data().users.includes(user.displayName) ;
-       })
-      .update({
-       score1: score
-      })
+  // useEffect(() => {
+  //   let index = getScore();
+  //   if( index === 1){
+  //   db.collection("players").docs
+  //     .filter((a) => {
+  //        return a.data().users.includes(user.displayName) ;
+  //      })
+  //     .update({
+  //      score1: score
+  //     })
   
-  }else{
-    db.collection("players").docs
-      .filter((a) => {
-         return a.data().users.includes(user.displayName) ;
-       })
-      .update({
-       score0: score
-    })
-  }
+  // }else{
+  //   db.collection("players").docs
+  //     .filter((a) => {
+  //        return a.data().users.includes(user.displayName) ;
+  //      })
+  //     .update({
+  //      score0: score
+  //   })
+  // }
 
-  }, [score])
+  // }, [score])
  
  console.log(opponentScore) 
  console.log(myScore) 
