@@ -49,7 +49,8 @@ function Signup() {
           FACEBOOK
         </Button>
       </div>
-      <img alt="" src={coupleImage} height={416} width={290} />
+      <img alt="" src={coupleImage} height={461} width={322} />
+      
     </div>
   );
 }
