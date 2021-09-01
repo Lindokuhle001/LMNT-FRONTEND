@@ -38,12 +38,6 @@ function Sidebar(props) {
 
         <Avatar src={user?.photoURL} />
       </div>
-      {/* <div className="sidebar_search">
-                <div className="sidebar_searchContainer">
-                    <SearchOutlined />
-                    <input type="text" placeholder="Search or start new chat"/>
-                </div>
-            </div> */}
       <div className="sidebar_chats">
         <SidebarChat addNewChat />
         {rooms.map((room) => (
@@ -51,7 +45,7 @@ function Sidebar(props) {
             key={room.id}
             id={room.id}
             name={room.data.users
-              .filter((myUser) => myUser !== user.displayName)
+              .filter((roomUser) => roomUser !== user.displayName)
               .pop()
               .split(" ")
               .shift()}

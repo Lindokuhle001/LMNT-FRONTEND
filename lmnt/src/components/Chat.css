@@ -9,6 +9,15 @@
   font-family: 'Poppins', sans-serif;
 
 }
+.next_quetion:hover{
+  background-color: #FFE5F3;
+  /* color: #fff; */
+}
+
+.add-new-chat-title:hover{
+  background-color: #056370;
+  color: #FFE5F3;
+}
 
 .card{
   width: auto;

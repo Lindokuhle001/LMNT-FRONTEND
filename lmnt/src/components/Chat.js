@@ -19,6 +19,7 @@ function Chat() {
   // const [seed, setSeed] = useState("");
   const { roomId } = useParams();
   const [messages, setMessages] = useState([]);
+  const [player, setPlayer] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [{ user }, dispatch] = useStateValue();
 
@@ -34,10 +35,6 @@ function Chat() {
     }
   }, [roomId]);
 
-  // useEffect(() => {
-  //   setSeed(Math.floor(Math.random() * 5000));
-  // }, [roomId]);
-  // let nextQuestion
   function getQuestion() {
     let randomNumber = () => {
       return Math.floor(Math.random() * 10);
@@ -60,11 +57,19 @@ function Chat() {
     setInput("");
   };
 
+  function addPlayer(player){
+    db.collection("players").add({
+      score0: 0,
+      score1: 0,
+      users: [player, user.displayName],
+
+    });
+  }
+
   return (
     <div className="Chat">
       <div className="Chat_headerRight">
         <div className="Chat_header">
-          {/* <p> {question}</p>*/}
           <Popup
             trigger={<button className="next_quetion">Ice breakers</button>}
             position="center center"
@@ -89,11 +94,6 @@ function Chat() {
               <button onClick={getQuestion}>play</button>
             </div>
           </Popup>
-          {/* <Link to="/Trivia" className="navbar-logo" >
-            <button  className="next_quetion">
-            play trivia
-          </button>
-          </Link> */}
           <Popup
             trigger={
               <button className="next_quetion">
@@ -116,9 +116,17 @@ function Chat() {
             position="center center"
           >
             <div>
-              <p>hi</p>
+              <p>Enter the name of the person you want to play against</p>
+              <input
+                value={player}
+                onChange={(e) => setPlayer(e.target.value)}
+                type="text"
+                placeholder="name"
+              />
               <Link to={`/Trivia`}>
-                <div>trivia</div>
+                <button className="add-new-chat-title" type="submit" onClick={()=>{addPlayer(player)}}>
+                  Play Now
+                </button>
               </Link>
             </div>
           </Popup>

@@ -35,7 +35,7 @@ function Profile() {
             <h4>You need to set up your profile before we can find you a match </h4>
             <h4>
               You will also need to know what your personality type is, If you
-               don't already know you can find out <a href="https://www.16personalities.com/free-personality-test">here</a>
+               don't already know you can find out <a target="_blank" href="https://www.16personalities.com/free-personality-test" rel="noreferrer">here</a>
                {/*<span><Link to={`/home`}>
             <button
               className="add-new-chat-title"
@@ -46,7 +46,7 @@ function Profile() {
           </span> */}
             </h4>
           </div>
-          <div class="user-details">
+          <div className="user-details">
             <label htmlFor="userGender">I'm a</label>
             <select name="gender" id="gender">
               <option value="male" onClick={setButtons("male")}>
@@ -56,7 +56,7 @@ function Profile() {
               <option value="other">other</option>
             </select>
           </div>
-          <div class="user-details">
+          <div className="user-details">
             <label htmlFor="perferedGender">I'm looking for a</label>
             <select name="gender" id="gender">
               <option value="male">male</option>
@@ -64,7 +64,7 @@ function Profile() {
               <option value="other">other</option>
             </select>
           </div>
-          <div class="user-details">
+          <div className="user-details">
             <label htmlFor="gender">I'm x years old</label>
             <select name="gender" id="gender">
               <option value="age">all</option>
@@ -82,7 +82,7 @@ function Profile() {
               <option value="age">30</option>
             </select>
           </div>
-          <div class="user-details">
+          <div className="user-details">
             <label htmlFor="personalityType">My personalityType</label>
             <select name="personalityType" id="personalityType">
               <option value="ISTJ">ISTJ</option>
