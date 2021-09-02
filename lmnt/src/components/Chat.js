@@ -124,15 +124,15 @@ function Chat() {
             position="center center"
           >
             <div>
-              <p>Enter the name of the person you want to play against</p>
-              <input
+              <p>Play a trivia game with your match</p>
+              {/* <input
                 value={player}
-                onChange={(e) => setPlayer(e.target.value)}
+                // onChange={(e) => setPlayer(e.target.value)}
                 type="text"
                 placeholder="name"
-              />
+              /> */}
               <Link to={`/Trivia`}>
-                <button className="add-new-chat-title" type="submit" onClick={()=>{addPlayer(player)}}>
+                <button className="add-new-chat-title" type="submit" >
                   Play Now
                 </button>
               </Link>

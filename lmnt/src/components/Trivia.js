@@ -1,8 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./Trivia.css";
-import db from "../firebase";
+// import db from "../firebase";
 // import firebase from "firebase";
-import { useStateValue } from "../StateProvider";
+// import { useStateValue } from "../StateProvider";
 
 
 export default function Trivia() {
@@ -62,10 +62,10 @@ export default function Trivia() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [myScore, setMyScore] = useState(0);
-  const [opponentScore, setOpponentScore] = useState(0);
+  // const [myScore, setMyScore] = useState(0);
+  // const [opponentScore, setOpponentScore] = useState(0);
   // eslint-disable-next-line no-unused-vars
-  const [{ user }, dispatch] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -80,45 +80,45 @@ export default function Trivia() {
     }
   };
 
-  function updateScore(){
-    const unsub = db.collection("players").onSnapshot((snapshot) =>{
-      setOpponentScore(
-        snapshot.docs
-          .map((doc) => ({
-            score0: doc.data().score0,
-            score1: doc.data().score1,
-            users: doc.data().users,
-          }))
-          .filter((a) => {
-            return a.users.includes(user.displayName);
-          }).pop()
+  // function updateScore(){
+  //   const unsub = db.collection("players").onSnapshot((snapshot) =>{
+  //     setOpponentScore(
+  //       snapshot.docs
+  //         .map((doc) => ({
+  //           score0: doc.data().score0,
+  //           score1: doc.data().score1,
+  //           users: doc.data().users,
+  //         }))
+  //         .filter((a) => {
+  //           return a.users.includes(user.displayName);
+  //         }).pop()
           
-      )
-      });
-      return () => {
-        unsub();
-      };
+  //     )
+  //     });
+  //     return () => {
+  //       unsub();
+  //     };
       
-  }
-  function getScore(){
-    const unsub = db.collection("players").onSnapshot((snapshot) =>{
-      setMyScore(
-        snapshot.docs
-          .map((doc) => ({
-            // scores: doc.data().score,
-            users: doc.data().users,
-          }))
-          .filter((a) => {
-            return a.users.includes(user.displayName);
-          }).pop()
+  // }
+  // function getScore(){
+  //   const unsub = db.collection("players").onSnapshot((snapshot) =>{
+  //     setMyScore(
+  //       snapshot.docs
+  //         .map((doc) => ({
+  //           // scores: doc.data().score,
+  //           users: doc.data().users,
+  //         }))
+  //         .filter((a) => {
+  //           return a.users.includes(user.displayName);
+  //         }).pop()
           
-      )
-      });
-      return () => {
-        unsub();
-      };
+  //     )
+  //     });
+  //     return () => {
+  //       unsub();
+  //     };
       
-  }
+  // }
 
   // useEffect(() => {
   //   let index = getScore();
@@ -143,8 +143,8 @@ export default function Trivia() {
 
   // }, [score])
  
- console.log(opponentScore) 
- console.log(myScore) 
+//  console.log(opponentScore) 
+//  console.log(myScore) 
 
 
 
@@ -172,8 +172,8 @@ export default function Trivia() {
                 <button
                   key={answerOption.answerText}
                   onClick={() =>{handleAnswerOptionClick(answerOption.isCorrect); 
-                    updateScore();
-                    getScore()
+                    // updateScore();
+                    // getScore()
                   }}
                     
                   
